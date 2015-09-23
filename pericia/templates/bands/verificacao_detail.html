@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block title %}
+    <title>Detalhes da Verifica&ccedil;&atilde;o</title>
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Atualizar Verificacao {{ nome.id }}</h1>
+    
+    	 		<aside role="complementary" class="col-md-4 col-md-pull-0">
+    <div class="list-group">
+        <a href="#" class="list-group-item active">
+        
+            Cadastros
+        </a>
+       <p  class="list-group-item">
+            <strong>Administrativo</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/verificacoes/{{ nome.id }}"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+             <a href="/verificacao_form_adm"><span class="glyphicon glyphicon-plus"></span></a>
+        </p>    
+        
+        <p  class="list-group-item">
+            Medidores&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/medidores/{{ nome.id }}"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+             <a href="/medidores_add"><span class="glyphicon glyphicon-plus"></span></a>
+        </p> 
+        <a href="#" class="list-group-item active">
+            Procedimentos de Verifica&ccedil;&atilde;o
+        </a>
+        <p  class="list-group-item">
+            Requisitos Administrativos&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/requisitosadm/{{ nome.id }}"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+             <a href="/requisitosadm_add"><span class="glyphicon glyphicon-plus"></span></a>
+        </p> 
+        <p  class="list-group-item">
+            Requisitos T&eacute;cnicos&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/requisitostecnicos/{{ nome.id }}"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+             <a href="/requisitostecnicos_add"><span class="glyphicon glyphicon-plus"></span></a>
+        </p> 	
+        <p  class="list-group-item">
+            Requisitos Metrol&oacute;gicos&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/requisitostecnicos/{{ nome.id }}"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+             <a href="/requisitostecnicos_add"><span class="glyphicon glyphicon-plus"></span></a>
+        </p> 
+    </div>
+	    </aside>
+    
+    <form class="form col-sm-4" method="POST">
+    	
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        {% endbuttons %}
+    </form>
+
+
+{% endblock content %}

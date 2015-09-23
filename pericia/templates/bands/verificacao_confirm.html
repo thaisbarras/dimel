@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block title %}
+    <title>Deleta Verificacao</title>
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Item Adicionado</h1>
+	<form  class="form col-sm-4" method="POST">
+		{% csrf_token %}
+	    {% buttons %}
+            <p>Verificacao Adicionada com Sucesso "{{ object }}"?</p>
+            <button class="btn btn-large btn-primary" type="button" onclick="window.location.href='/verificacoes'">Volta a Listagem de Verificacao</button><br><br>
+	    	<!-- <input type="submit" value="Confirm" class="btn btn-primary" />-->
+        {% endbuttons %}	    
+	</form>
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block title %}
+    <title>Detalhes da Verifica&ccedil;&atilde;o</title>
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Atualizar Verificacao {{ nome.id }}</h1>
+    
+    	 		<aside role="complementary" class="col-md-4 col-md-pull-0">
+		<!-- 
+		<ul class="nav nav-pills nav-stacked">
+		  <li class="active"><a href="#">Cadastros</a></li>
+		  <li  class="disabled"><a href="/verificacao_form_adm">Administrativo</a></li>
+		  <li><a href="/verificacao_form_medidor">Medidor</a></li>
+		  
+		  <li class="active"><a href="#">Verificacao</a></li>
+		  <li><a href="/verificacao_requisitosadm">Requisitos Administrativos</a></li>
+		  <li><a href="/verificacao_requisitostecnicos">Requisitos Tecnicos</a></li>
+	      <li><a href="/verificacao_requisitosmetrologicos">Requisitos Metrologicos</a></li>
+
+		  
+		</ul> -->
+		<br>
+		 <div class="list-group">
+        <a href="#" class="list-group-item active">
+            Cadastros
+        </a>
+        <a href="/verificacao_form_adm">
+            <span></span> Administrativo
+        </a>
+        <a href="/verificacao_form_medidor" class="list-group-item"  class="list-group-item disabled">
+            Medidor
+        </a>
+        <a href="#" class="list-group-item active">
+            Procedimentos de Verifica&ccedil;&atilde;o
+        </a>
+        <a href="Requisitos Administrativos" class="list-group-item">
+            Requisitos Administrativos 
+              </a>
+        <a href="/verificacao_requisitostecnicos" class="list-group-item">
+            Requisitos T&eacute;cnicos
+        </a>
+        <a href="/verificacao_requisitosmetrologicos" class="list-group-item">
+            Requisitos Metrol&oacute;gicos
+        </a>
+    </div>
+	    </aside>
+    
+    <form class="form col-sm-4" method="POST">
+    	
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        {% endbuttons %}
+    </form>
+
+
+{% endblock content %}
